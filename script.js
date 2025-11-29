@@ -65,11 +65,11 @@ function dispatch(text) {
     try {
       result = obtainResult();
     } catch (error) {
-      return;
+      result = 0;
     }
 
     updateDisplayOutput(result);
-    mainBuffer = String(result);
+    mainBuffer = result !== 0 ? String(result) : '';
     auxiliaryBuffer = '';
     currentOperation = '';
 
